@@ -11,6 +11,30 @@ while [[ true ]]; do
 		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4
 	elif [[ $# -eq 7 ]]; then
 		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $6 $7
+	elif [[ $# -eq 6 ]]; then
+		case $6 in
+			iphone7|iphone6)
+					w=1080
+					h=1920
+				;;
+			iphone|iphone4|iphone4s|iphone3g|iphone3gs)
+					w=320
+					h=480
+				;;
+			iphone5|iphone5c|iphone5s)
+					w=320
+					h=568
+				;;
+			iphone6)
+					w=375
+					h=667
+				;;
+			iphone6plus)
+					w=414
+					h=736
+				;;
+		esac
+		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $w $h
 	fi
 	count=$((count+1))
 	sleep $5
