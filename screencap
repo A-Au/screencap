@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# screencap URL dir name format interval [width height] [device]
+
+count=1
+while [[ true ]]; do
+	echo "Performing screencap #$count"
+	cur_date=`date +%Y-%m-%d`
+	cur_time=`date +%H-%M-%S`
+	if [[ $# -eq 5 ]]; then
+		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4
+	elif [[ $# -eq 7 ]]; then
+		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $6 $7
+	fi
+	count=$((count+1))
+	sleep $5
+done
