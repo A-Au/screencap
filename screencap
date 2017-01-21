@@ -13,7 +13,7 @@ while [[ true ]]; do
 		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $6 $7
 	elif [[ $# -eq 6 ]]; then
 		case $6 in
-			iphone7|iphone6)
+			iphone7|iphone6|googlepixel)
 					w=1080
 					h=1920
 				;;
@@ -32,6 +32,10 @@ while [[ true ]]; do
 			iphone6plus)
 					w=414
 					h=736
+				;;
+			googlepixelxl)
+					w=1440
+					h=2560
 				;;
 		esac
 		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $w $h
