@@ -11,7 +11,7 @@
     height*				- set the height of the viewport
     device*				- can choose a predefined viewport size ie. 'iphone' or 'googlepixel'
 
-    * - optional arguments, if width and height are defined, the device cannot be defined and vice versa
+    * - optional arguments, if width and height are defined, the device cannot be defined as well and vice versa
 
 ## What is `screencap`?
 
