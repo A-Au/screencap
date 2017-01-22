@@ -18,6 +18,12 @@
 + Simple *nix terminal commmand that can automate the process of taking screenshots of a given URL.
 + Something I made at UofTHacks IV.
 
+## Getting Started
+
+Run the following terminal command to install and setup screencap
+
+    $ ./install.sh
+
 ## Sample Calls
 
     screencap 'http://google.com' ./tmp google png 60 iphone
