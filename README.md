@@ -2,7 +2,7 @@
 
     $ screencap URL directory name format interval [width height] [device]
 
-    URL 				- any valid URL
+    URL 				- any valid URL, must include the protocol
     directory 			- directory where the rendered files will be stored
     name 				- name of the file
     format 				- any of PDF, PNG, JPEG, BMP, PPM, and GIF
@@ -15,7 +15,7 @@
 
 ## What is `screencap`?
 
-+ Simple commmand that can automate the process of taking screenshots of a given URL.
++ Simple *nix terminal commmand that can automate the process of taking screenshots of a given URL.
 + Something I made at UofTHacks IV.
 
 ## Sample Calls
