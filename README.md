@@ -11,4 +11,13 @@
     height				- set the height of the viewport
     device				- can choose a predefined viewport size ie. 'iphone' or 'googlepixel'
 
-Renders and saves webpages located at the provided URL in the given directory 
+## What is `screencap`?
+
++ Simple commmand that can automate the process of taking screenshots of a given URL.
++ Something I made at UofTHacks IV.
+
+## Sample Calls
+
+    screencap 'http://google.com' ./tmp google png 60 iphone
+
+    screencap 'http://google.com' . google pdf 60
