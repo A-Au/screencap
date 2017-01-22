@@ -26,6 +26,6 @@ Run the following terminal command to install and setup screencap
 
 ## Sample Calls
 
-    screencap 'http://google.com' ./tmp google png 60 iphone
+    $ screencap 'http://google.com' ./tmp google png 60 iphone
 
-    screencap 'http://google.com' . google pdf 60
+    $ screencap 'http://google.com' . google pdf 60
