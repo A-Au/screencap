@@ -1,45 +1,32 @@
 #!/bin/bash
 
-# screencap URL dir name format interval [width height] [device]
+# screencap URL dir name format interval [ config_file ]
 
 count=1
+
+userAgent=''
+h=''
+w=''
+while IFS="=" read -r key val  
+do
+	#$key="echo  "$key" | tr -d '[:space:]'"
+	echo 'a'$key'a'
+	if [ $key == 'userAgent' ]; then
+		userAgent=$val
+	elif [ $key == 'height' ]; then
+		h=$val
+		echo $h
+	elif [ $key == 'width' ]; then
+		w=$val
+		echo $w
+	fi
+done < $6
+echo $w$h
 while [[ true ]]; do
 	echo "Performing screencap #$count"
 	cur_date=`date +%Y-%m-%d`
 	cur_time=`date +%H-%M-%S`
-	if [[ $# -eq 5 ]]; then
-		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4
-	elif [[ $# -eq 7 ]]; then
-		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $6 $7
-	elif [[ $# -eq 6 ]]; then
-		case $6 in
-			iphone7|iphone6|googlepixel)
-					w=1080
-					h=1920
-				;;
-			iphone|iphone4|iphone4s|iphone3g|iphone3gs)
-					w=320
-					h=480
-				;;
-			iphone5|iphone5c|iphone5s)
-					w=320
-					h=568
-				;;
-			iphone6)
-					w=375
-					h=667
-				;;
-			iphone6plus)
-					w=414
-					h=736
-				;;
-			googlepixelxl)
-					w=1440
-					h=2560
-				;;
-		esac
-		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $w $h
-	fi
+	phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $w $h $userAgent
 	count=$((count+1))
 	if [[ -z $5 ]]; then
 		echo "ERROR: Invalid interval"
@@ -47,3 +34,30 @@ while [[ true ]]; do
 	fi
 	sleep $5
 done
+
+#case $6 in
+#			iphone7|iphone6|googlepixel)
+#					w=1080
+#					h=1920
+#				;;
+#			iphone|iphone4|iphone4s|iphone3g|iphone3gs)
+#					w=320
+#					h=480
+#				;;
+#			iphone5|iphone5c|iphone5s)
+#					w=320
+#					h=568
+#				;;
+#			iphone6)
+#					w=375
+#					h=667
+#				;;
+#			iphone6plus)
+#					w=414
+#					h=736
+#				;;
+#			googlepixelxl)
+#					w=1440#
+#					h=2560
+#				;;
+#		esac

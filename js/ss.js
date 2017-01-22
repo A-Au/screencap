@@ -7,6 +7,11 @@ var out = args[2];
 
 if (!!args[3] && !!args[4]) {
 	page.viewportSize = { width: args[3], height: args[4] };
+} else if (!!args[3]) {
+	page.userAgent = args[3]
+}
+if (!!args[5]) {
+	page.userAgent = args[5];
 }
 page.open(url, function() {
 	page.render(out);

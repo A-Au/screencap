@@ -1,15 +1,13 @@
 # screencap
 
-    $ screencap URL directory name format interval [width height] [device]
+    $ screencap URL directory name format interval [config]
 
     URL 				- any valid URL, must include the protocol
     directory 			- directory where the rendered files will be stored
     name 				- name of the file
     format 				- any of PDF, PNG, JPEG, BMP, PPM, and GIF
     interval			- the number of seconds before the page is rendered and stored again
-    width*				- set the width of the viewport
-    height*				- set the height of the viewport
-    device*				- can choose a predefined viewport size ie. 'iphone' or 'googlepixel'
+    config*				- config file to define configuration of browser
 
     * - optional arguments, if width and height are defined, the device cannot be defined as well and vice versa
 
@@ -23,6 +21,21 @@
 Run the following terminal command to install and setup screencap
 
     $ ./install.sh
+
+## Config File
+
+Currently only supports the following:
+
+    width				- width of the viewport
+    height				- height of the viewport
+    userAgent			- user agent of the browser
+
+### Example
+
+    height = 500
+    width = 200
+    userAgent = "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+
 
 ## Sample Calls
 
