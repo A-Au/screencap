@@ -41,5 +41,9 @@ while [[ true ]]; do
 		phantomjs ./js/ss.js $1 $2'/'$cur_date'/'$3$cur_time'.'$4 $w $h
 	fi
 	count=$((count+1))
+	if [[ -z $5 ]]; then
+		echo "ERROR: Invalid interval"
+		break;
+	fi
 	sleep $5
 done
