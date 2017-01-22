@@ -1,6 +1,6 @@
 # screencap
 
-    screencap URL directory name format interval [width height] [device]
+    $ screencap URL directory name format interval [width height] [device]
 
     URL 				- any valid URL
     directory 			- directory where the rendered files will be stored
